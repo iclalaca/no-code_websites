@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & No-Code Revolution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4A90E2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #4A90E2;
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            padding: 100px 0 50px;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        /* Homepage */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #4A90E2, #50C878);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #5a6c7d;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4A90E2, #50C878);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.4);
+        }
+
+        .hero-visual {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9ff, #e6f3ff);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #4A90E2;
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4A90E2, #50C878);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* What is AI No-Code Section */
+        .explanation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .explanation-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        .explanation-text p {
+            font-size: 1.1rem;
+            color: #5a6c7d;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            background: linear-gradient(135deg, #f1f8ff, #e8f5e8);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #4A90E2;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            border-color: #4A90E2;
+            transform: translateY(-5px);
+        }
+
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .tool-logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4A90E2, #50C878);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .tool-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .use-case {
+            background: linear-gradient(135deg, #fff, #f8f9ff);
+            padding: 2.5rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .use-case::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, #4A90E2, #50C878);
+        }
+
+        .use-case h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        /* Get Started Section */
+        .get-started {
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, #4A90E2, #50C878);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .explanation {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-content {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">AI × No-Code</div>
+                <ul class="nav-links">
+                    <li><a onclick="showSection('home')">Home</a></li>
+                    <li><a onclick="showSection('what-is')">What is AI No-Code?</a></li>
+                    <li><a onclick="showSection('tools')">Top Tools</a></li>
+                    <li><a onclick="showSection('use-cases')">Use Cases</a></li>
+                    <li><a onclick="showSection('get-started')">Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage Section -->
+    <section id="home" class="section active">
+        <div class="container">
+            <div class="section-content">
+                <div class="hero">
+                    <h1>Unlock Innovation: The Power of AI & No-Code Combined</h1>
+                    <p>Empower your business with cutting-edge technology. No coding skills required. Build faster, innovate smarter, and automate tasks with AI-powered no-code solutions.</p>
+                    <a href="#" class="cta-button" onclick="showSection('what-is')">Explore AI-Powered No-Code Solutions</a>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="feature-card">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Build Faster</h3>
+                        <p>Create websites, apps, and workflows in minutes, not months</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>AI-Powered</h3>
+                        <p>Let artificial intelligence handle the complex work for you</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>No Code Needed</h3>
+                        <p>Visual tools that anyone can use, regardless of technical background</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is AI No-Code Section -->
+    <section id="what-is" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">What is AI-Powered No-Code?</h2>
+                
+                <div class="explanation">
+                    <div class="explanation-text">
+                        <h2>The Future is Here</h2>
+                        <p>AI-powered no-code platforms combine the simplicity of visual development with the intelligence of artificial intelligence. These tools understand what you want to build and help you create it faster than ever before.</p>
+                        <p>Imagine describing your vision in plain English and watching as AI generates the code, designs, and content you need. That's the power of AI-enhanced no-code tools.</p>
+                    </div>
+                    <div class="explanation-visual">
+                        <div style="background: linear-gradient(135deg, #4A90E2, #50C878); height: 300px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                            🤖 + 🎨
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <h3>🎯 Smart Content Generation</h3>
+                        <p>AI automatically creates copy, images, and layouts tailored to your brand and audience.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🔄 Automated Workflows</h3>
+                        <p>Set up complex business processes that run themselves, from email campaigns to data analysis.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>📊 Intelligent Analytics</h3>
+                        <p>Get insights and recommendations powered by machine learning algorithms.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>🎨 Design Assistance</h3>
+                        <p>AI suggests layouts, colors, and designs that convert better and look professional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Tools Section -->
+    <section id="tools" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Top AI No-Code Tools</h2>
+                
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-logo">D</div>
+                            <div class="tool-name">Durable.co</div>
+                        </div>
+                        <p><strong>AI Website Builder:</strong> Creates complete websites in 30 seconds using AI. Just describe your business and watch as it generates content, images, and layouts automatically.</p>
+                        <p><strong>Use Cases:</strong> Small business websites, portfolios, landing pages</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-logo">C</div>
+                            <div class="tool-name">Canva AI</div>
+                        </div>
+                        <p><strong>AI Design Assistant:</strong> Intelligent design suggestions, AI image generation, and automated resizing. Creates professional graphics with just text prompts.</p>
+                        <p><strong>Use Cases:</strong> Marketing materials, social media content, presentations</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-logo">📝</div>
+                            <div class="tool-name">Copy.ai</div>
+                        </div>
+                        <p><strong>AI Content Generator:</strong> Produces high-quality marketing copy, blog posts, and social media content. Understands your brand voice and target audience.</p>
+                        <p><strong>Use Cases:</strong> Content marketing, ad copy, email campaigns</p>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <div class="tool-logo">A</div>
+                            <div class="tool-name">Adalo AI</div>
+                        </div>
+                        <p><strong>AI App Builder:</strong> Creates mobile and web apps with intelligent features like chatbots, recommendation engines, and automated user interactions.</p>
+                        <p><strong>Use Cases:</strong> Customer apps, internal tools, marketplace platforms</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Real-World Success Stories</h2>
+                
+                <div class="use-cases">
+                    <div class="use-case">
+                        <h3>🏪 Restaurant Owner Creates Website in Minutes</h3>
+                        <p>Maria used Durable.co to build a complete restaurant website with online ordering. The AI generated menu descriptions, optimized images, and even created compelling copy about her family recipes. What used to take weeks now took 10 minutes.</p>
+                        <p><strong>Result:</strong> 40% increase in online orders within the first month.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <h3>📱 Fitness Coach Launches Mobile App</h3>
+                        <p>James built a workout tracking app using Adalo AI without writing a single line of code. The AI helped design user flows, suggested features, and even created personalized workout recommendations for his clients.</p>
+                        <p><strong>Result:</strong> 500+ downloads and recurring monthly revenue.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <h3>✍️ Marketing Agency Scales Content Production</h3>
+                        <p>Sarah's agency used Copy.ai to generate first drafts for client campaigns. The AI learned each client's brand voice and produced content that needed minimal editing, allowing her team to focus on strategy rather than writing.</p>
+                        <p><strong>Result:</strong> 3x increase in client capacity with the same team size.</p>
+                    </div>
+
+                    <div class="use-case">
+                        <h3>🎨 E-commerce Store Automates Design</h3>
+                        <p>David's online store uses Canva AI to automatically create product graphics, social media posts, and advertising materials. The AI maintains brand consistency while producing hundreds of variations for A/B testing.</p>
+                        <p><strong>Result:</strong> 25% improvement in ad performance and 60% time savings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="section">
+        <div class="container">
+            <div class="section-content">
+                <div class="get-started">
+                    <h2 class="section-title">Ready to Get Started?</h2>
+                    <p style="font-size: 1.2rem; color: #5a6c7d; margin-bottom: 2rem;">Join thousands of entrepreneurs who are already building the future with AI-powered no-code tools.</p>
+                    
+                    <div class="resource-grid">
+                        <a href="#" class="resource-card">
+                            <h3>🚀 Start Your Free Trial</h3>
+                            <p>Try these AI-powered tools risk-free and see the difference they can make for your business.</p>
+                        </a>
+                        
+                        <a href="#" class="resource-card">
+                            <h3>📚 Learning Resources</h3>
+                            <p>Access tutorials, templates, and best practices to maximize your success with AI no-code tools.</p>
+                        </a>
+                        
+                        <a href="#" class="resource-card">
+                            <h3>👥 Join the Community</h3>
+                            <p>Connect with other entrepreneurs and share experiences in our supportive community.</p>
+                        </a>
+                    </div>
+                    
+                    <div style="margin-top: 3rem;">
+                        <a href="#" class="cta-button">Begin Your AI No-Code Journey Today</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Add smooth scroll behavior and active states
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click handlers to nav links
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
