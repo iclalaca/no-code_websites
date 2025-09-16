@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & No-Code Revolution</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-blue': '#2563eb',
+                        'tech-green': '#10b981',
+                        'tech-purple': '#8b5cf6',
+                        'accent-orange': '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .tech-gradient { background: linear-gradient(135deg, #2563eb 0%, #10b981 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-8 h-8 bg-gradient-to-r from-tech-blue to-tech-green rounded-lg mr-3"></div>
+                        <span class="text-xl font-bold text-gray-900">AI × No-Code</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="nav-link text-tech-blue hover:text-tech-green px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#what-is" class="nav-link text-gray-700 hover:text-tech-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">What is AI No-Code?</a>
+                        <a href="#tools" class="nav-link text-gray-700 hover:text-tech-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Top Tools</a>
+                        <a href="#use-cases" class="nav-link text-gray-700 hover:text-tech-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Use Cases</a>
+                        <a href="#get-started" class="nav-link text-gray-700 hover:text-tech-blue px-3 py-2 rounded-md text-sm font-medium transition-colors">Get Started</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-tech-blue">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-tech-blue font-medium">Home</a>
+                <a href="#what-is" class="block px-3 py-2 text-gray-700 hover:text-tech-blue">What is AI No-Code?</a>
+                <a href="#tools" class="block px-3 py-2 text-gray-700 hover:text-tech-blue">Top Tools</a>
+                <a href="#use-cases" class="block px-3 py-2 text-gray-700 hover:text-tech-blue">Use Cases</a>
+                <a href="#get-started" class="block px-3 py-2 text-gray-700 hover:text-tech-blue">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Unlock Innovation: The Power of 
+                    <span class="text-accent-orange">AI & No-Code</span> Combined
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                    Transform your business ideas into reality without writing a single line of code. 
+                    Harness the power of AI to build, automate, and scale faster than ever before.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('what-is')" class="bg-accent-orange hover:bg-yellow-500 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors">
+                        Explore AI-Powered Solutions
+                    </button>
+                    <button onclick="scrollToSection('tools')" class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors">
+                        See Top Tools
+                    </button>
+                </div>
+            </div>
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold mb-2">Build Faster</h3>
+                    <p class="opacity-90">Create applications and websites in minutes, not months</p>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-xl font-semibold mb-2">Innovate Smarter</h3>
+                    <p class="opacity-90">AI handles the complex logic while you focus on your vision</p>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-6">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-2">Automate Everything</h3>
+                    <p class="opacity-90">Let AI automate repetitive tasks and optimize your workflows</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is AI-Powered No-Code Section -->
+    <section id="what-is" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">What is AI-Powered No-Code?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The perfect fusion of artificial intelligence and visual development platforms, 
+                    making advanced technology accessible to everyone.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">How AI Enhances No-Code</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-tech-blue rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Automated Content Generation</h4>
+                                <p class="text-gray-600">AI creates compelling copy, images, and layouts based on your business needs and brand voice.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-tech-green rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Smart Design Suggestions</h4>
+                                <p class="text-gray-600">Get intelligent recommendations for layouts, colors, and user experience improvements.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-tech-purple rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-900 mb-2">Intelligent Data Analysis</h4>
+                                <p class="text-gray-600">Transform raw data into actionable insights with AI-powered analytics and reporting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8">
+                    <div class="text-center">
+                        <div class="w-32 h-32 mx-auto mb-6 bg-gradient-to-r from-tech-blue to-tech-green rounded-full flex items-center justify-center">
+                            <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-semibold text-gray-900 mb-4">The Result?</h4>
+                        <p class="text-gray-600 text-lg leading-relaxed">
+                            <strong>Build faster.</strong> <strong>Innovate smarter.</strong> <strong>Automate tasks.</strong>
+                            <br><br>
+                            Turn your ideas into reality without the technical complexity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top AI No-Code Tools Section -->
+    <section id="tools" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Top AI-Powered No-Code Tools</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover the leading platforms that combine AI intelligence with no-code simplicity
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Durable.co</h3>
+                    <p class="text-gray-600 mb-4">AI builds complete websites in 30 seconds. Just describe your business and watch AI create a professional site with content, images, and contact forms.</p>
+                    <div class="text-sm text-tech-blue font-medium">Use Case: Website Building</div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m0 0V1a1 1 0 011-1h2a1 1 0 011 1v18a1 1 0 01-1 1H4a1 1 0 01-1-1V1a1 1 0 011-1h2a1 1 0 011 1v3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Canva AI</h3>
+                    <p class="text-gray-600 mb-4">Magic Design creates stunning graphics instantly. AI-powered background removal, text generation, and smart resize make professional design accessible to everyone.</p>
+                    <div class="text-sm text-tech-blue font-medium">Use Case: Design & Graphics</div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Copy.ai</h3>
+                    <p class="text-gray-600 mb-4">Generate high-converting marketing copy, blog posts, and social media content. AI understands your brand voice and creates content that resonates with your audience.</p>
+                    <div class="text-sm text-tech-blue font-medium">Use Case: Content Creation</div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                    <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Adalo AI</h3>
+                    <p class="text-gray-600 mb-4">Build native mobile apps with AI assistance. Smart component suggestions, automated database setup, and intelligent user flow optimization.</p>
+                    <div class="text-sm text-tech-blue font-medium">Use Case: App Development</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases & Examples Section -->
+    <section id="use-cases" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">Real-World Success Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See how businesses and entrepreneurs are transforming their operations with AI-powered no-code solutions
+                </p>
+            </div>
+            
+            <div class="space-y-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex items-center px-4 py-2 bg-tech-blue bg-opacity-10 text-tech-blue rounded-full text-sm font-medium mb-4">
+                            🚀 Website Creation
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">From Idea to Website in Minutes</h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Sarah, a local bakery owner, used Durable.co to create a professional website in under 30 seconds. 
+                            The AI generated compelling copy about her artisanal breads, created a booking system for custom cakes, 
+                            and even optimized the site for local SEO.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Results:</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 300% increase in online orders</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Saved $3,000 on web development</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Launched in same day</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-gradient-to-r from-tech-blue to-purple-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                                </svg>
+                            </div>
+                            <div class="text-4xl font-bold text-gray-900 mb-2">30 sec</div>
+                            <div class="text-gray-600">Website Creation Time</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1 bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-4xl font-bold text-gray-900 mb-2">10x</div>
+                            <div class="text-gray-600">Faster Content Creation</div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <div class="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-4">
+                            ✍️ Content Marketing
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">AI-Powered Content Strategy</h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Marcus, a fitness coach, uses Copy.ai to generate engaging social media posts, email newsletters, 
+                            and blog articles. The AI learns his coaching style and creates content that perfectly matches 
+                            his brand voice while driving client engagement.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Impact:</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 500% increase in social engagement</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 40 hours saved per month</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 200% growth in email subscribers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
+                            📱 App Development
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-4">Customer Service Revolution</h3>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Lisa's restaurant chain built a customer feedback app using Adalo AI. The app automatically 
+                            categorizes reviews, sends personalized responses, and provides real-time analytics to improve 
+                            service quality across all locations.
+                        </p>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-900 mb-2">Transformation:</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 90% faster response times</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> 4.8/5 customer satisfaction</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Zero coding required</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div class="text-4xl font-bold text-gray-900 mb-2">4.8★</div>
+                            <div class="text-gray-600">Customer Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section id="get-started" class="py-20 tech-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Business?</h2>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Join thousands of entrepreneurs who are already building the future with AI-powered no-code tools
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Choose Your Tool</h3>
+                    <p class="opacity-90">Pick the AI-powered platform that matches your needs</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Start Building</h3>
+                    <p class="opacity-90">Let AI guide you through the creation process</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Launch & Scale</h3>
+                    <p class="opacity-90">Deploy your solution and watch your business grow</p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">Start Your AI No-Code Journey Today</h3>
+                    <p class="text-lg opacity-90 mb-6">
+                        Get access to exclusive tutorials, tool comparisons, and step-by-step guides
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-accent-orange hover:bg-yellow-500 text-white font-semibold py-3 px-8 rounded-lg transition-colors">
+                            Start Free Trial
+                        </button>
+                        <button class="bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-semibold py-3 px-8 rounded-lg transition-colors">
+                            Download Guide
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold mb-2">50,000+</div>
+                    <div class="opacity-90">Businesses Transformed</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-2">95%</div>
+                    <div class="opacity-90">Faster Development</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-2">$0</div>
+                    <div class="opacity-90">Coding Experience Required</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-8 h-8 bg-gradient-to-r from-tech-blue to-tech-green rounded-lg mr-3"></div>
+                    <span class="text-xl font-bold">AI × No-Code</span>
+                </div>
+                <p class="text-gray-400 mb-6">Empowering innovation through accessible technology</p>
+                <div class="flex justify-center space-x-6 text-gray-400">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact</a>
+                </div>
+                <div class="mt-6 pt-6 border-t border-gray-800 text-gray-400 text-sm">
+                    © 2024 AI × No-Code. Transforming businesses through intelligent automation.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Update active navigation link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Update active state
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('text-tech-blue'));
+                this.classList.add('text-tech-blue');
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for active navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const currentSection = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-tech-blue');
+                        if (link.getAttribute('href') === `#${currentSection}`) {
+                            link.classList.add('text-tech-blue');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // Add scroll effect to cards
+        const cards = document.querySelectorAll('.card-hover');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            cardObserver.observe(card);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9802b225d73ddb8d',t:'MTc1ODA1MDE2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
