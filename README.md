@@ -14,6 +14,9 @@ This project was a full-circle exploration of an AI-driven workflow, from ideati
 2.  **Prompt Engineering:** The detailed prompt used for the website builders was carefully crafted and refined with the help of **Gemini**.
 3.  **Website Creation & Analysis:** The final prompt was then used to generate websites with **Canva AI** and **Claude AI**, followed by a comparative analysis of their outputs.
 
+<img width="1024" height="1024" alt="Gemini_Generated_Image_k9xkwdk9xkwdk9xk" src="https://github.com/user-attachments/assets/dc09b0c1-6a64-482e-a0a6-3fb02495dbb7" />
+> This illustrative graphic was generated with the help of an AI assistant (Gemini) to visually represent the project's end-to-end AI-assisted workflow, from brainstorming to the final comparison.
+
 ## The Prompt
 
 To ensure a fair and consistent comparison, the following detailed prompt was used for both AI tools:
@@ -66,7 +69,10 @@ Key sections/pages needed:
 After entering the same prompt into both tools, the output from Canva AI and Claude AI was remarkably similar in terms of structure and general content. The core difference was primarily in the visual style and layout, rather than a fundamental divergence in concept or content focus.
 
 * **Canva AI:** The tool produced a website draft with a polished, visually appealing layout. The design was clean and modern, leveraging Canva's strong aesthetic templates.
+  <img width="1512" height="944" alt="Ekran Resmi 2025-09-17 14 35 04" src="https://github.com/user-attachments/assets/230ad96b-90a2-4cd3-b778-6d5efbbd7b87" />
+
 * **Claude AI:** The output was a well-structured, logical website draft with coherent text. It effectively laid out the requested sections.
+<img width="1512" height="944" alt="Ekran Resmi 2025-09-17 14 34 38" src="https://github.com/user-attachments/assets/6bf7d0ac-4d6d-4906-af0d-4f46d9068665" />
 
 **Note:** As these are drafts produced directly by the AI models, they are not currently live. The purpose of this project is to analyze the initial output of each tool based on the same prompt.
 
