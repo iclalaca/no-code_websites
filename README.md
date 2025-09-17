@@ -15,7 +15,7 @@ This project was a full-circle exploration of an AI-driven workflow, from ideati
 3.  **Website Creation & Analysis:** The final prompt was then used to generate websites with **Canva AI** and **Claude AI**, followed by a comparative analysis of their outputs.
 
 <img width="1024" height="1024" alt="Gemini_Generated_Image_k9xkwdk9xkwdk9xk" src="https://github.com/user-attachments/assets/dc09b0c1-6a64-482e-a0a6-3fb02495dbb7" />
-_This illustrative graphic was generated with the help of an Google Gemini to visually represent the project's end-to-end AI-assisted workflow, from brainstorming to the final comparison._
+_This illustrative graphic was generated with the help of an Gemini to visually represent the project's end-to-end AI-assisted workflow, from brainstorming to the final comparison._
 
 ## The Prompt
 
